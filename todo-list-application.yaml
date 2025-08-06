@@ -15,10 +15,11 @@ spec:
       parameters:
         - name: 'backend.image.tag'
           value: '1cb3ce' # CI 파이프라인이 바로 이 'value'를 업데이트할 것임
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default' # 배포 대상 네임스페이스
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  syncPolicy: {}
+    # automated:
+    #   prune: true
+    #   selfHeal: true
