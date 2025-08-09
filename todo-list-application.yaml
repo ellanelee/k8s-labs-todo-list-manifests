@@ -19,7 +19,7 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default' # 배포 대상 네임스페이스
-  syncPolicy: {}
+  syncPolicy: 
     automated:
       prune: true
       selfHeal: true
