@@ -13,7 +13,15 @@ backend:
   cors_allowed_origins: http://localhost:3000
 
 database:
-  host: "todo-db-statefulset-0.todo-headless-db-service"
+  host: StatefulSet의 개별 파드 이름은:
+<StatefulSet이름>-<순번>
+즉: todo-list-todo-list-chart-db-statefulset-0
+StatefulSet DNS 이름은:
+<파드이름>.<headless-service이름>
+즉: todo-list-todo-list-chart-db-statefulset-0.todo-headless-db-service
+그러니까 values.yaml에서:
+yamldatabase:
+  host: "todo-list-todo-list-chart-db-statefulset-0.todo-headless-db-service"
   name: "tododb" 
   user: "root" 
   password: "todo1234"
